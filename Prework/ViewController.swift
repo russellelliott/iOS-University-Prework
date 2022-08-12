@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //Function to calculate total tip
-    @IBAction func calculateTip(_ sender: Any) {
+    //logic for calculating the tip
+    func calc(){
         //Get bill amount from text field input
         let bill = Double(billAmountTextField.text!) ?? 0
         
@@ -42,6 +42,15 @@ class ViewController: UIViewController {
         
         //Update Total Amount
         totalLabel.text = String(format: "$%.2f", total)
+    }
+    
+    //function triggered when bill amount changed
+    @IBAction func billAmountChanged(_ sender: Any) {
+        calc();
+    }
+    //function triggered when tip percentage changed
+    @IBAction func calculateTip(_ sender: Any) {
+        calc();
     }
     
 
